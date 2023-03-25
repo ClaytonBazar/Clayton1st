@@ -11,6 +11,12 @@ package f4ex2;
 //Implementacao do exercicio 3 e 4
 public class ContaCorrente extends ContaBancaria implements Imprimivel {
       private String tipo = "Conta Corrente";
+
+    public ContaCorrente(String dono, int conta) {
+        super(dono, conta);
+    }
+      
+      
       public double sacar(double valor) {
       return (valor)-taxaDeOperacao();
       
@@ -31,7 +37,7 @@ public class ContaCorrente extends ContaBancaria implements Imprimivel {
      
     @Override
     public String mostrarDados() {
-       return this.tipo;
+      return "Fados da Conta\n Tipo:"+ this.tipo + "\nsaldo=" + this.saldo + "\nconta=" + this.conta + "\nPortador: "+this.getDono();
     }
      
 }

@@ -13,12 +13,19 @@ public class ContaBancaria implements Imprimivel{
     protected String dono;
     protected double saldo=1000;
     protected int conta;
+
+    public ContaBancaria(String dono, int conta) {
+        this.dono = dono;
+        this.conta = conta;
+    }
+    
+    
     
     public double taxaDeOperacao(){
-     return this.saldo*=0.05;   
+     return this.saldo*=0.005;   
     }
     public String Limite(Float deposito){
-        this.saldo-=deposito;
+       this.saldo-=deposito;
         if (saldo>=-5000){
             return "operacao efectuada com sucesso, o seu saldo atual e "+this.saldo;
         }else
@@ -50,7 +57,7 @@ public class ContaBancaria implements Imprimivel{
     }
 
     @Override public String mostrarDados() {
-        return "ContaBancaria{" + "saldo=" + saldo + ", conta=" + conta + '}';
+        return "ContaBancaria{" + "saldo=" + this.saldo + "\n conta=" + this.getConta() + "\n Portador: "+this.getDono()+'}';
     }
 
     
